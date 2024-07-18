@@ -41,7 +41,6 @@ while True:
         print("Score Of The Player:", player_score)
         print("Dealer wins (Player Loss Because Player Score is exceeding 21)")
         break
-
 while dealer_score < 17:
     new_card = deck.pop()
     dealer_card.append(new_card)
@@ -51,31 +50,37 @@ print("Cards Dealer Has:", dealer_card)
 print("Score Of The Dealer:", dealer_score)
 print("\n")
 
-if dealer_score > 21:
+if player_score > 21:
+    print("Cards Dealer Has:", dealer_card)
+    print("Score Of The Dealer:", dealer_score)
+    print("Cards Player Has:", player_card)
+    print("Score Of The Player:", player_score)
+    print("Dealer wins (Player Loss Because Player Score is exceeding 21)")
+elif dealer_score > 21:
     print("Cards Dealer Has:", dealer_card)
     print("Score Of The Dealer:", dealer_score)
     print("Cards Player Has:", player_card)
     print("Score Of The Player:", player_score)
     print("Player wins (Dealer Loss Because Dealer Score is exceeding 21)")
-elif player_score & dealer_score < 21 & player_score > dealer_score:
+elif player_score > dealer_score:
     print("Cards Dealer Has:", dealer_card)
     print("Score Of The Dealer:", dealer_score)
     print("Cards Player Has:", player_card)
     print("Score Of The Player:", player_score)
     print("Player wins (Player Has High Score than Dealer)")
-elif player_score & dealer_score < 21 & dealer_score > player_score:
+elif dealer_score > player_score:
     print("Cards Dealer Has:", dealer_card)
     print("Score Of The Dealer:", dealer_score)
     print("Cards Player Has:", player_card)
     print("Score Of The Player:", player_score)
     print("Dealer wins (Dealer Has High Score than Player)")
-elif dealer_score & player_score > 21:
+elif dealer_score and player_score > 21:
     print("Cards Dealer Has:", dealer_card)
     print("Score Of The Dealer:", dealer_score)
     print("Cards Player Has:", player_card)
     print("Score Of The Player:", player_score)
     print("Both Dealer and Player lose")
-elif dealer_score & player_score == 21:
+elif dealer_score == player_score:
     print("Cards Dealer Has:", dealer_card)
     print("Score Of The Dealer:", dealer_score)
     print("Cards Player Has:", player_card)
